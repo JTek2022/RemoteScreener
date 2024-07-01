@@ -13,6 +13,10 @@ from streamlit.components.v1 import html
 import json
 import os
 
+st.set_page_config(page_title='CT-07 Remote Screener',  layout='wide', page_icon='https://noctrixhealth.com/wp-content/uploads/2021/05/cropped-SiteIcon-32x32.jpg')
+
+
+
 # def send_email(user_id, results, network_type):
 #     email = "ct_07@noctrixhealth.com"
 #     password = os.environ.get("EMAIL_PASSWORD", "password")  # Preferably use environment variable

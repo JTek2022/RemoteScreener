@@ -45,7 +45,7 @@ params = st.query_params.to_dict()
 st.image('https://noctrixhealth.com/wp-content/uploads/2023/07/noctrix-horiz-logo-tipo.svg')
 st.title("Nidra Internet Speed Test")
 
-st.write(f"{params['patientName']}, Thank you for following the link to your titration system test.  Dr. {params['doctorName']} has sent a prescription for a remote titraion for your Nidra Therapya and this link will help your specialist, {params['specialistName']}, determine if you have the connectivitiy required to compleet this process in your home.")
+st.write(f"{params['patientName']}, Thank you for following the link to your titration system test. Dr. {params['doctorName']} has sent a prescription for a remote titration for your Nidra Therapy, and this link will help your specialist, {params['specialistName']}, determine if you have the connectivity required to complete this process in your home.")
 
 
 # JavaScript code to interact with OpenSpeedTest and send results back to Streamlit

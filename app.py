@@ -41,8 +41,8 @@ st.set_page_config(page_title='CT-07 Remote Screener',  page_icon='https://noctr
 #         server.sendmail(email, email, message.as_string())
 
 # Get user_id from URL parameter
-params = experimental_get_query_params() #st.query_params.to_dict()
-#params = {'patientName':'Stephanie', 'doctorName':'Clayton','specialistName':'Leticia'}
+#params = experimental_get_query_params() #st.query_params.to_dict()
+params = {'patientName':'Stephanie', 'doctorName':'Clayton','specialistName':'Leticia'}
 
 st.image('https://noctrixhealth.com/wp-content/uploads/2023/07/noctrix-horiz-logo-tipo.svg')
 st.title("Nidra Internet Speed Test")

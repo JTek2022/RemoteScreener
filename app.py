@@ -76,7 +76,8 @@ elif st.session_state.page == 1:
         st.write(f"Latitude: {location['latitude']}")
         st.write(f"Longitude: {location['longitude']}")
         st.write(f"Accuracy: {location['accuracy']} meters")
-
+        st.map(data={"lat": [location['latitude']], "lon": [location['longitude']]})
+        
     # Display additional information if available
     if location['altitude']:
         st.write(f"Altitude: {location['altitude']} meters")
@@ -88,11 +89,10 @@ elif st.session_state.page == 1:
         st.write(f"Speed: {location['speed']} m/s")
 
     # You can add a map here to visualize the location
-    st.map(data={"lat": [location['latitude']], "lon": [location['longitude']]})
-else:
-    st.write("Location information not available. Please allow location access and try again.")
+    
 
-st.write("Note: Location accuracy may vary depending on your device and environment.")
+
+    st.write("Note: Location accuracy may vary depending on your device and environment.")
     
     st.write("Please check coverage using the tool below:")
     

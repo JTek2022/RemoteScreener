@@ -33,7 +33,7 @@ if 'test_results' not in st.session_state:
 # Page 0: Introduction
 if st.session_state.page == 0:
     st.title("Bandwidth Test")
-    st.write("We need to perform the measurement in the same area where the study would be conducted.")
+    st.write("Are you in the location where you will be performing the study?")
     
     col1, col2 = st.columns(2)
     with col1:

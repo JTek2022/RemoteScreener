@@ -79,7 +79,7 @@ elif st.session_state.page == 1:
         st.write(f"Longitude: {location['longitude']}")
         lon = location['longitude']
         st.write(f"Accuracy: {location['accuracy']} meters")
-        fig = px.scatter_mapbox(lat=lat, lon=lon, zoom=10)
+        #fig = px.scatter_mapbox(lat=lat, lon=lon, zoom=10)
         #st.plotly_chart(fig)
         #st.map(data={"lat": [location['latitude']], "lon": [location['longitude']]})
         

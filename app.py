@@ -118,14 +118,14 @@ elif st.session_state.page == 3:
         except Exception as e:
             st.error(f"An error occurred while sending the email: {str(e)}")
 
-# Navigation buttons
-col1, col2 = st.columns(2)
-with col1:
-    if st.session_state.page > 0 and st.button("Previous"):
-        st.session_state.page -= 1
-with col2:
-    if st.session_state.page < 3 and st.button("Next"):
-        st.session_state.page += 1
+# # Navigation buttons
+# col1, col2 = st.columns(2)
+# with col1:
+#     if st.session_state.page > 0 and st.button("Previous"):
+#         st.session_state.page -= 1
+# with col2:
+#     if st.session_state.page < 3 and st.button("Next"):
+#         st.session_state.page += 1
 
 
 

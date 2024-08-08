@@ -4,6 +4,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from streamlit.components.v1 import html
 from streamlit_geolocation import streamlit_geolocation
+import plotly.express as px
 
 # Function to send email
 def send_email(subject, body):
@@ -74,9 +75,13 @@ elif st.session_state.page == 1:
     if location:
         st.write("Your current location:")
         st.write(f"Latitude: {location['latitude']}")
+        lat = location['latitude']
         st.write(f"Longitude: {location['longitude']}")
+        lon = location['longitude']
         st.write(f"Accuracy: {location['accuracy']} meters")
-        st.map(data={"lat": [location['latitude']], "lon": [location['longitude']]})
+        fig = px.scatter_mapbox(lat=lat, lon=lon, zoom=10)
+        st.plotly_chart(fig)
+        #st.map(data={"lat": [location['latitude']], "lon": [location['longitude']]})
         
     # Display additional information if available
     if location['altitude']:

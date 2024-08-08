@@ -72,10 +72,10 @@ elif st.session_state.page == 1:
     st.title("Coverage Detection")
     location = streamlit_geolocation()
     if location:
-    st.write("Your current location:")
-    st.write(f"Latitude: {location['latitude']}")
-    st.write(f"Longitude: {location['longitude']}")
-    st.write(f"Accuracy: {location['accuracy']} meters")
+        st.write("Your current location:")
+        st.write(f"Latitude: {location['latitude']}")
+        st.write(f"Longitude: {location['longitude']}")
+        st.write(f"Accuracy: {location['accuracy']} meters")
 
     # Display additional information if available
     if location['altitude']:

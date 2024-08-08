@@ -3,6 +3,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from streamlit.components.v1 import html
+from streamlit_geolocation import streamlit_geolocation
 
 # Function to send email
 def send_email(subject, body):
@@ -69,6 +70,30 @@ elif st.session_state.page == 1:
             })
             st.session_state.page = 2
     st.title("Coverage Detection")
+    location = streamlit_geolocation()
+    if location:
+    st.write("Your current location:")
+    st.write(f"Latitude: {location['latitude']}")
+    st.write(f"Longitude: {location['longitude']}")
+    st.write(f"Accuracy: {location['accuracy']} meters")
+
+    # Display additional information if available
+    if location['altitude']:
+        st.write(f"Altitude: {location['altitude']} meters")
+    if location['altitudeAccuracy']:
+        st.write(f"Altitude Accuracy: {location['altitudeAccuracy']} meters")
+    if location['heading']:
+        st.write(f"Heading: {location['heading']} degrees")
+    if location['speed']:
+        st.write(f"Speed: {location['speed']} m/s")
+
+    # You can add a map here to visualize the location
+    st.map(data={"lat": [location['latitude']], "lon": [location['longitude']]})
+else:
+    st.write("Location information not available. Please allow location access and try again.")
+
+st.write("Note: Location accuracy may vary depending on your device and environment.")
+    
     st.write("Please check coverage using the tool below:")
     
     # JavaScript code to interact with OpenSpeedTest and send results back to Streamlit

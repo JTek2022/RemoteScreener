@@ -2,6 +2,7 @@ import streamlit as st
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from streamlit.components.v1 import html
 
 # Function to send email
 def send_email(subject, body):
@@ -45,7 +46,13 @@ elif st.session_state.page == 1:
     st.title("Speed Test")
     st.write("Please perform the speed test using the tool below:")
     
-    st.components.v1.iframe("http://34.174.34.168/", height=400)
+    # JavaScript code to interact with OpenSpeedTest and send results back to Streamlit
+    js_code = """
+    <!--OST Widget code start--><div style="text-align:right;"><div style="min-height:360px;"><div style="width:100%;height:0;padding-bottom:50%;position:relative;"><iframe style="border:none;position:absolute;top:0;left:0;width:100%;height:100%;min-height:360px;border:none;overflow:hidden !important;" src="//openspeedtest.com/speedtest?run=0"></iframe></div></div></a></div><!-- OST Widget code end -->
+    """
+
+    # # Embed OpenSpeedTest
+    html(js_code, height=400)
     
     with st.form("speed_test_form"):
         download = st.number_input("Download Speed (Mbps)", min_value=0.0, step=1.0)

@@ -68,6 +68,31 @@ elif st.session_state.page == 1:
                 "jitter": jitter
             })
             st.session_state.page = 2
+        st.title("Speed Test")
+    st.write("Please perform the speed test using the tool below:")
+    
+    # JavaScript code to interact with OpenSpeedTest and send results back to Streamlit
+    js_code = """
+    <!--OST Widget code start--><div style="text-align:right;"><div style="min-height:360px;"><div style="width:100%;height:0;padding-bottom:50%;position:relative;"><iframe style="border:none;position:absolute;top:0;left:0;width:100%;height:100%;min-height:360px;border:none;overflow:hidden !important;" src="https://www.t-mobile.com/coverage/coverage-map"></iframe></div></div></a></div><!-- OST Widget code end -->
+    """
+
+    # # Embed OpenSpeedTest
+    html(js_code, height=400)
+    
+    with st.form("Coverage"):
+        download = st.number_input("Download Speed (Mbps)", min_value=0.0, step=1.0)
+        upload = st.number_input("Upload Speed (Mbps)", min_value=0.0, step=1.0)
+        ping = st.number_input("Ping (ms)", min_value=0, step=1)
+        jitter = st.number_input("Jitter (ms)", min_value=0, step=1)
+        
+        if st.form_submit_button("Submit"):
+            st.session_state.test_results.append({
+                "download": download,
+                "upload": upload,
+                "ping": ping,
+                "jitter": jitter
+            })
+            st.session_state.page = 2
 
 # Page 2: Connection Type
 elif st.session_state.page == 2:

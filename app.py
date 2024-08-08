@@ -68,8 +68,8 @@ elif st.session_state.page == 1:
                 "jitter": jitter
             })
             st.session_state.page = 2
-        st.title("Speed Test")
-    st.write("Please perform the speed test using the tool below:")
+    st.title("Coverage Detection")
+    st.write("Please check coverage using the tool below:")
     
     # JavaScript code to interact with OpenSpeedTest and send results back to Streamlit
     js_code = """
@@ -80,18 +80,11 @@ elif st.session_state.page == 1:
     html(js_code, height=400)
     
     with st.form("Coverage"):
-        download = st.number_input("Download Speed (Mbps)", min_value=0.0, step=1.0)
-        upload = st.number_input("Upload Speed (Mbps)", min_value=0.0, step=1.0)
-        ping = st.number_input("Ping (ms)", min_value=0, step=1)
-        jitter = st.number_input("Jitter (ms)", min_value=0, step=1)
+        connection_type = st.radio('Choose your connection type:', ['4G', '5G', '5G Ultra', 'Other'])
+        
         
         if st.form_submit_button("Submit"):
-            st.session_state.test_results.append({
-                "download": download,
-                "upload": upload,
-                "ping": ping,
-                "jitter": jitter
-            })
+            st.session_state.test_results.append(connection_type)
             st.session_state.page = 2
 
 # Page 2: Connection Type

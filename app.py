@@ -63,6 +63,15 @@ def send_email(location):
 st.markdown("# Nidra Geolocation App")
 st.markdown("### We will use your location to determine cellular coverage.")
 st.markdown("### Please push the button and allow location permission on this page")
+st.markdown("""
+<style>
+div.stButton > button:first-child {
+    font-size: 20px;
+    padding: 10px 24px;
+    width: 100%;
+}
+</style>
+""", unsafe_allow_html=True)
 location = streamlit_geolocation()
 #location
 if check_location(location):

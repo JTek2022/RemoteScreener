@@ -53,8 +53,10 @@ def send_email(location):
         server.send_message(msg)
         st.success("📨 Email sent successfully!")
         st.balloons()
+        st.info("Please return to the form, enter your result and continue to the next section.")
     except Exception as e:
         st.error(f"⚠️ An error occurred while sending the email: {e}")
+        st.info("Please return to the form, enter your result and continue to the next section.")
     finally:
         server.quit()
 

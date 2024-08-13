@@ -66,9 +66,12 @@ st.markdown("### Please push the button and allow location permission on this pa
 st.markdown("""
 <style>
 div.stButton > button:first-child {
-    font-size: 200px;
-    padding: 100px 240px;
-    width: 400%;
+    font-size: 24px;
+    padding: 20px 40px;
+    height: auto;
+    width: auto;
+    min-width: 300px;
+    white-space: normal;
 }
 </style>
 """, unsafe_allow_html=True)

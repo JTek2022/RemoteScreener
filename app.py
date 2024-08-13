@@ -51,9 +51,10 @@ def send_email(location):
         server.starttls()
         server.login(sender_email, password)
         server.send_message(msg)
-        st.success("Email sent successfully")
+        st.success("📨 Email sent successfully!")
+        st.balloons()
     except Exception as e:
-        st.error(f"An error occurred while sending the email: {e}")
+        st.error(f"⚠️ An error occurred while sending the email: {e}")
     finally:
         server.quit()
 

@@ -75,8 +75,7 @@ div.stButton > button:first-child {
 }
 </style>
 """, unsafe_allow_html=True)
-if st.button("🧭 Capture location.   Click here."):
-    location = streamlit_geolocation()
+location = streamlit_geolocation()
 #location
 if check_location(location):
     st.write("Your current location:")

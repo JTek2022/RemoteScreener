@@ -89,4 +89,4 @@ if location['speed']:
 
 
 
-st.markdown("![Image](https://media.licdn.com/dms/image/C5612AQF9nqixPk6_sA/article-cover_image-shrink_720_1280/0/1643020458617?e=2147483647&v=beta&t=Cc_pg65PM_kod0jmrYKc7vRdGjzBaQ_ucjfIsoEe9mQ){width=10%}")
+#st.markdown("![Image](https://media.licdn.com/dms/image/C5612AQF9nqixPk6_sA/article-cover_image-shrink_720_1280/0/1643020458617?e=2147483647&v=beta&t=Cc_pg65PM_kod0jmrYKc7vRdGjzBaQ_ucjfIsoEe9mQ){width=10%}")

@@ -66,8 +66,8 @@ st.markdown("### Please push the button and allow location permission on this pa
 st.markdown("""
 <style>
 div.stButton > button:first-child {
-    font-size: 20px;
-    padding: 10px 24px;
+    font-size: 200px;
+    padding: 100px 240px;
     width: 400%;
 }
 </style>

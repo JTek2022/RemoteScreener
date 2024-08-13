@@ -62,7 +62,7 @@ def send_email(location):
 
 st.markdown("# Nidra Geolocation App")
 st.markdown("### We will use your location to determine cellular coverage.")
-st.markdown("### Please tap the button and allow location permission on this page")
+st.markdown("### Tap the button and then allow the app to know your location.")
 st.markdown("""
 <style>
 div.stButton > button:first-child {

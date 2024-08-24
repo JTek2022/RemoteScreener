@@ -33,8 +33,8 @@ def send_email(location):
     subject = "Current Location Information"
     body = f"""
     Your current location:
-    Latitude: {location['latitude']}
-    Longitude: {location['longitude']}
+    Latitude: {location['latitude']}°
+    Longitude: {location['longitude']}°
     Accuracy: {location['accuracy']} meters
     """
 

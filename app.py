@@ -83,7 +83,7 @@ if check_location(location):
     lat = location['latitude']
     st.write(f"Longitude: {location['longitude']}")
     lon = location['longitude']
-    st.write(f"Accuracy: {location['accuracy']} meters")
+    st.info(f"📍Accuracy: {int(location['accuracy'])} meters")
     send_email(location)
     #fig = px.scatter_mapbox(lat=lat, lon=lon, zoom=10)
     #st.plotly_chart(fig)
